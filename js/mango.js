@@ -3,14 +3,14 @@ class mango{
 	{
 		var options={
 			isStatic:true,
-			restitution :0.4,
-            friction :0.0,
+			restitution :0,
+            friction :1,
 			}
 		this.x=x;
 		this.y=y;
-		this.r=r;
+		this.r=r
 		this.image=loadImage("images/mango.png")
-		this.body=Bodies.circle(this.x, this.y, (this.r-20)/2, options)
+		this.body=Bodies.circle(this.x, this.y, this.r, options)
 		World.add(world, this.body);
 	}
 
@@ -23,7 +23,8 @@ class mango{
 		rotate(this.body.angle)
 		fill(255,0,255)
 		imageMode(CENTER);
-		image(this.image, 0,0,this.r, this.r)
+		ellipseMode(CENTER);
+		image(this.image, 0,0,this.r*2, this.r*2)
 		pop()
  }
 }
